@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace POP_lab4_Solution2
 {
-    public class TableTwoWaiters
+    public class TableWaiter
     {
         private readonly Semaphore[] forks = new Semaphore[5];
-        private readonly Semaphore waiters = new Semaphore(2, 2);
+        private readonly Semaphore waiter = new Semaphore(4, 4);
 
-        public TableTwoWaiters()
+        public TableWaiter()
         {
             for (int i = 0; i < forks.Length; i++)
             {
@@ -21,7 +21,7 @@ namespace POP_lab4_Solution2
 
         public void AcquireForks(int right, int left)
         {
-            waiters.WaitOne();
+            waiter.WaitOne();
             forks[right].WaitOne();
             forks[left].WaitOne();
         }
@@ -30,7 +30,7 @@ namespace POP_lab4_Solution2
         {
             forks[left].Release();
             forks[right].Release();
-            waiters.Release();
+            waiter.Release();
         }
     }
 }

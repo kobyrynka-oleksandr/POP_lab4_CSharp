@@ -4,12 +4,12 @@
     {
         public static void Main(string[] args)
         {
-            TableTwoWaiters table = new TableTwoWaiters();
-            PhilosopherTwoWaiters[] philosophers = new PhilosopherTwoWaiters[5];
+            TableWaiter table = new TableWaiter();
+            PhilosopherWaiter[] philosophers = new PhilosopherWaiter[5];
 
             for (int i = 0; i < 5; i++)
             {
-                philosophers[i] = new PhilosopherTwoWaiters(i, table);
+                philosophers[i] = new PhilosopherWaiter(i, table);
             }
         }
     }

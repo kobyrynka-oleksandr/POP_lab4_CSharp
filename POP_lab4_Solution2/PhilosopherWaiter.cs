@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace POP_lab4_Solution2
 {
-    public class PhilosopherTwoWaiters
+    public class PhilosopherWaiter
     {
-        private readonly TableTwoWaiters table;
+        private readonly TableWaiter table;
         private readonly int leftFork;
         private readonly int rightFork;
         private readonly int id;
         private readonly Thread worker;
 
-        public PhilosopherTwoWaiters(int id, TableTwoWaiters table)
+        public PhilosopherWaiter(int id, TableWaiter table)
         {
             this.id = id;
             this.table = table;
